@@ -1,0 +1,257 @@
+.device:root {
+  font-size: 16px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-align: center;
+}
+
+/*
+███████ ████████ ██    ██ ██      ███████
+██         ██     ██  ██  ██      ██
+███████    ██      ████   ██      █████
+     ██    ██       ██    ██      ██
+███████    ██       ██    ███████ ███████
+*/
+body {
+  background-color: #F1F1E8;
+  background-color: #80ab81;
+  min-height: 100vh;
+}
+
+header,
+footer {
+/*  background-color: #F1F1E8;
+  background-color: #80ab81;
+  background-color: rgb(47, 52, 80);
+  */
+  
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #9E5778;
+  color: #F1F1E8;
+  color: #2F4858;
+  color: black;
+}
+
+
+footer p {
+  color: rgb(193, 80, 178);
+  color: #2F4858;
+  color: black;
+  font-size: 1.4rem;
+}
+
+
+
+/*
+███    ███  █████  ██ ███    ██
+████  ████ ██   ██ ██ ████   ██
+██ ████ ██ ███████ ██ ██ ██  ██
+██  ██  ██ ██   ██ ██ ██  ██ ██
+██      ██ ██   ██ ██ ██   ████
+*/
+header {
+  padding: 3vh 0;
+}
+
+nav a {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+nav img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+h1 {
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+/*
+██████  ██  █████  ███    ██  ██████
+██   ██ ██ ██   ██ ████   ██ ██    ██
+██████  ██ ███████ ██ ██  ██ ██    ██
+██      ██ ██   ██ ██  ██ ██ ██    ██
+██      ██ ██   ██ ██   ████  ██████
+*/
+main {
+  align-items: center;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+}
+.piano {
+  display: flex;
+  justify-content: center;
+  /*margin: 20vh 0;*/
+}
+
+.notes {
+  align-items: flex-end;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: center;
+  line-height: 50px;
+  /*padding-bottom: 20px;*/
+  text-align: center;
+  text-transform: capitalize;
+  user-select: none;
+}
+
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #2d3233;
+  transform: translateY(2px);
+  z-index: 0;
+}
+
+
+.white {
+  background-color: white;
+  border: 1px solid rgb(44, 45, 41);
+  height: 400px;
+  margin: 0 1px;
+  width: 80px;
+
+}
+
+.black {
+  background-color: black;
+  color: white;
+  height: 240px;
+  margin-left: -25px;
+  margin-right: -25px;
+  width: 50px;
+  z-index: 2;
+}
+
+
+
+/*
+███████  ██████   ██████  ████████ ███████ ██████
+██      ██    ██ ██    ██    ██    ██      ██   ██
+█████   ██    ██ ██    ██    ██    █████   ██████
+██      ██    ██ ██    ██    ██    ██      ██   ██
+██       ██████   ██████     ██    ███████ ██   ██
+*/
+footer,
+.footer-wrapper {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+footer {
+  bottom: 0;
+  padding: 2vh 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+
+footer a {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.footer-wrapper img {
+  height: 60px;
+  /*margin: 2vh 1vh;*/
+  width: 60px;
+}
+
+/*
+███    ███ ███████ ██████  ██  █████
+████  ████ ██      ██   ██ ██ ██   ██
+██ ████ ██ █████   ██   ██ ██ ███████
+██  ██  ██ ██      ██   ██ ██ ██   ██
+██      ██ ███████ ██████  ██ ██   ██
+*/
+@media screen and (min-width: 1301px) {}
+
+/*
+ ██     ██████       ██████       ██████      ██████  ██   ██
+███          ██     ██  ████     ██  ████     ██   ██  ██ ██
+ ██      █████      ██ ██ ██     ██ ██ ██     ██████    ███
+ ██          ██     ████  ██     ████  ██     ██       ██ ██
+ ██     ██████       ██████       ██████      ██      ██   ██
+*/
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 1300px) and (orientation: portrait) {}
+
+@media screen and (max-width: 1300px) and (orientation: landscape) {}
+
+/*
+ ██      ██████       ██████       ██████      ██████  ██   ██
+███     ██  ████     ██  ████     ██  ████     ██   ██  ██ ██
+ ██     ██ ██ ██     ██ ██ ██     ██ ██ ██     ██████    ███
+ ██     ████  ██     ████  ██     ████  ██     ██       ██ ██
+ ██      ██████       ██████       ██████      ██      ██   ██
+*/
+@media screen and (max-width: 1001px) {}
+
+@media screen and (max-width: 1001px) and (orientation: portrait) {}
+
+@media screen and (max-width: 1001px) and (orientation: landscape) {}
+
+@media screen and (max-height: 700px) and (max-width: 1000px) and (orientation: landscape) {}
+
+/*
+ ██████  ██   ██  ██████      ██████  ██   ██
+██       ██   ██ ██  ████     ██   ██  ██ ██
+███████  ███████ ██ ██ ██     ██████    ███
+██    ██      ██ ████  ██     ██       ██ ██
+ ██████       ██  ██████      ██      ██   ██
+*/
+@media screen and (max-width: 640px) and (orientation: portrait) {}
+
+@media screen and (max-width: 700px) and (orientation: landscape) {}
+
+/*
+██   ██      █████       ██████      ██████  ██   ██
+██   ██     ██   ██     ██  ████     ██   ██  ██ ██
+███████      █████      ██ ██ ██     ██████    ███
+     ██     ██   ██     ████  ██     ██       ██ ██
+     ██      █████       ██████      ██      ██   ██
+*/
+@media screen and (max-width: 480px) {}
+
+/*
+██████      ███████      ██████      ██████  ██   ██
+     ██          ██     ██  ████     ██   ██  ██ ██
+ █████          ██      ██ ██ ██     ██████    ███
+     ██        ██       ████  ██     ██       ██ ██
+██████         ██        ██████      ██      ██   ██
+*/
+@media screen and (max-width: 370px) {}
