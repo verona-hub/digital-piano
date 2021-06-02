@@ -30,14 +30,20 @@ function keydownFunc(event) {
 
 // Function that triggers the note animation
 function keyAnimation(currentKey) {
-  // Create a variable activeKey and set it to be the clicked/pressed div
-  const activeKey = document.querySelector('.' + currentKey);
-  // To start the animation, add the class 'pressed' to the activeKey
-  activeKey.classList.add('pressed');
-  // To end the animation, set the duration when the 'pressed' class will be removed
-  setTimeout(() => {
-    activeKey.classList.remove('pressed');
-  }, 100);
+  // Keyboard letters that are paired with a sound
+  const usedLetters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b'];
+  // Check if the pressed key is paired with a sound
+  // This prevents Errors when you press a button that is not paired with a sound (example CTRL)
+  if (usedLetters.indexOf(currentKey) >= 0) {
+    // Create a variable activeKey and set it to be the clicked/pressed div
+    const activeKey = document.querySelector('.' + currentKey);
+    // Adding the class 'pressed' to the activeKey starts the animation
+    activeKey.classList.add('pressed');
+    // Removing the class 'pressed' from the activeKey after a specified time ends the animation
+    setTimeout(() => {
+      activeKey.classList.remove('pressed');
+    }, 100);
+  }
 }
 
 // Main function that plays the sounds
@@ -45,7 +51,7 @@ const makeSound = key => {
   // Switch statement with each keyboard letter assigned to a note sound; pass in the clicked/pressed key
   switch (key) {
     case 'q':
-      const a0 = new Audio('sounds/1.a0.mp3');
+      let a0 = new Audio('sounds/1.a0.mp3');
       a0.play();
       break;
 
@@ -164,7 +170,8 @@ const makeSound = key => {
       c8.play();
       break;
 
-    default: // Default left empty on purpose so the user is free to use keyboard shortcuts without interfering with the switch statement (example: fn + key)
+    default:
       break;
+      // Default left empty on purpose
   }
 }
