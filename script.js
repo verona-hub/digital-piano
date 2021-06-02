@@ -1,54 +1,26 @@
-// Get the keyboard notes size
-const notesSize = document.querySelectorAll('.notes').length;
-// Loop through all the keyboard notes
-for (let i = 0; i < notesSize; i++) {
-  // Listen for a mouse press on every note and if pressed activate the clickFunc
-  document.querySelectorAll('.notes')[i].addEventListener('mousedown', clickFunc);
-}
-
-// Listen for a keyboard press on every note and if pressed activate the keydownFunc
-document.addEventListener('keydown', keydownFunc);
-
-
-// Function activation on click
-function clickFunc() {
+// Play sound on click
+const onClick = e => {
   // Create a note variable and pass it the clicked innerHtml value
-  const note = this.innerHTML;
-  // Pass the note variable as an argument to the makeSound function
-  makeSound(note);
-  // Pass the note variable as a parameter to the keyAnimation function
+  const note = e.target.innerHTML;
+  // Pass the note variable as an argument to the playSound function
+  playSound(note);
+  // Pass the note variable as an argument to the keyAnimation function
   keyAnimation(note);
 }
 
-// Function activation on keypress
-function keydownFunc(event) {
-  // Pass the pressed key a parameter to the makeSound function
-  makeSound(event.key);
-  // Pass the pressed key a parameter to the keyAnimation function
-  keyAnimation(event.key);
-}
-
-// Function that triggers the note animation
-function keyAnimation(currentKey) {
-  // Keyboard letters that are paired with a sound
-  const usedLetters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b'];
-  // Check if the pressed key is paired with a sound
-  // This prevents Errors when you press a button that is not paired with a sound (example CTRL)
-  if (usedLetters.indexOf(currentKey) >= 0) {
-    // Create a variable activeKey and set it to be the clicked/pressed div
-    const activeKey = document.querySelector('.' + currentKey);
-    // Adding the class 'pressed' to the activeKey starts the animation
-    activeKey.classList.add('pressed');
-    // Removing the class 'pressed' from the activeKey after a specified time ends the animation
-    setTimeout(() => {
-      activeKey.classList.remove('pressed');
-    }, 100);
-  }
+// Play sound on keypress
+const onKeyPress = e => {
+  // Prevent keydown to keep firing the sound while pressed down
+  if (e.repeat) { return }
+  // Pass the pressed key as an argument to the playSound function
+  playSound(e.key);
+  // Pass the pressed key as an argument to the keyAnimation function
+  keyAnimation(e.key);
 }
 
 // Main function that plays the sounds
-const makeSound = key => {
-  // Switch statement with each keyboard letter assigned to a note sound; pass in the clicked/pressed key
+const playSound = key => {
+  // Switch statement with each keyboard letter assigned to a note sound; pass in the clicked/pressed key and play the paired sound
   switch (key) {
     case 'q':
       let a0 = new Audio('sounds/1.a0.mp3');
@@ -175,3 +147,31 @@ const makeSound = key => {
       // Default left empty on purpose
   }
 }
+
+// Function that triggers the note animation
+const keyAnimation = currentKey => {
+  // Keyboard letters that are paired with a sound
+  const usedLetters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b'];
+  // Check if the pressed key is paired with a sound
+  // This prevents Errors when you press a button that is not paired with a sound (example CTRL)
+  if (usedLetters.indexOf(currentKey) >= 0) {
+    // Create a variable activeKey and set it to be the clicked/pressed div
+    const activeKey = document.querySelector('.' + currentKey);
+    // Adding the class 'pressed' to the activeKey starts the animation
+    activeKey.classList.add('pressed');
+    // Removing the class 'pressed' from the activeKey after a specified time ends the animation
+    setTimeout(() => {
+      activeKey.classList.remove('pressed');
+    }, 100);
+  }
+}
+
+// Get all the keyboard notes
+const notes = document.querySelectorAll('.notes');
+// Loop through and listen for a mouse press; if pressed, activate the onClick function
+notes.forEach(note => note.addEventListener('mousedown', onClick));
+
+
+// Listen for a keyboard press on every note and if pressed, activate the onKeyPress function
+document.addEventListener('keydown', onKeyPress);
+
