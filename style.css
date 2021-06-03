@@ -21,8 +21,6 @@ html {
 ███████    ██       ██    ███████ ███████
 */
 body {
-  background-color: #80ab81;
-  background-color: rgb(152, 185, 152);
   background-color: rgb(47, 52, 80);
   font-family: 'PT Serif', serif;
   min-height: 100vh;
@@ -51,7 +49,6 @@ h1 {
 }
 
 footer p {
-  color: rgb(193, 80, 178);
   color: #F1F1E8;
   font-size: 1.4rem;
 }
@@ -64,7 +61,7 @@ footer p {
 ██      ██ ██   ██ ██ ██   ████
 */
 header {
-  padding: 3vh 0;
+  padding: 30px;
 }
 
 nav {
@@ -103,11 +100,14 @@ main {
   display: flex;
   height: 70vh;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 95%;
 }
 
 .piano {
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 
 .notes {
@@ -124,7 +124,7 @@ main {
 }
 
 .pressed {
-  box-shadow: 0 3px 4px 0 #2d3233;
+  box-shadow: 0 3px 4px 0 #c28cdb;
   transform: translateY(2px);
   z-index: 0;
 }
@@ -133,7 +133,7 @@ main {
   background-color: white;
   border: 1px solid rgb(44, 45, 41);
   height: 400px;
-  margin: 0 1px;
+  margin: 0 2px;
   width: 80px;
 }
 
@@ -253,23 +253,25 @@ footer a {
 @media screen and (max-width: 370px) {}
 
 @media screen and (min-width: 20px) and (max-width: 967px) and (orientation: portrait) {
-  /*html {
+  html {
     transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
+    /* transform-origin: left top; */
+    /* width: 100vh; */
     overflow-x: hidden;
     position: absolute;
-    top: 100%;
+    /* top: 100%; */
     left: 0;
   }
   
   body {
-     width: 100px; 
-     height: 70vw; 
+     /* width: 100px;  */
+     /* height: 70vw;  */
   }
   
   
   .piano {
-    width: 600px;
-  }*/
+    /* width: 600px; */
+    margin: 0 auto;
+    width: 90vh;
+  }
 }
