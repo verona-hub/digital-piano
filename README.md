@@ -1,4 +1,4 @@
-# Digital Piano
+# Virtual Piano
 
 ### This website was made with Html, Css, and Javascript. 
 
