@@ -217,7 +217,41 @@ footer a {
 */
 @media screen and (max-width: 1001px) {}
 
-@media screen and (max-width: 1001px) and (orientation: portrait) {}
+@media screen and (max-width: 1001px) and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    /* transform-origin: left top; */
+    /* width: 100vh; */
+    overflow-x: hidden;
+    position: absolute;
+    top: 20%;
+    /* left: 0; */
+  }
+
+  nav {
+    height: 120px;
+  }
+
+  main {
+    height: 500px;
+    max-width: 100%;
+  }
+
+  .piano {
+    margin: 0 auto;
+    width: 100vh;
+  }
+  .white {
+    height: 500px;
+    margin: 0 2px;
+    width: 110px;
+  }
+  
+  .black {
+    height: 280px;
+    width: 80px;
+  }
+}
 
 @media screen and (max-width: 1001px) and (orientation: landscape) {}
 
@@ -241,7 +275,45 @@ footer a {
      ██     ██   ██     ████  ██     ██       ██ ██
      ██      █████       ██████      ██      ██   ██
 */
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+  html {
+    top: 0;
+  }
+  
+  body {
+    min-width: 100vh;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  header {
+    padding: 0;
+  }
+  nav {
+    height: 80px;
+  }
+
+  main {
+    height: 280px;
+    width: 100vh;
+    max-width: 95%;
+  }
+
+  .piano {
+    margin: 0 auto;
+    width: 100vh;
+  }
+  .white {
+    height: 220px;
+    width: 60px;
+  }
+  
+  .black {
+    height: 100px;
+    width: 50px;
+  }
+}
 
 /*
 ██████      ███████      ██████      ██████  ██   ██
@@ -253,25 +325,10 @@ footer a {
 @media screen and (max-width: 370px) {}
 
 @media screen and (min-width: 20px) and (max-width: 967px) and (orientation: portrait) {
-  html {
-    transform: rotate(-90deg);
-    /* transform-origin: left top; */
-    /* width: 100vh; */
-    overflow-x: hidden;
-    position: absolute;
-    /* top: 100%; */
-    left: 0;
-  }
-  
-  body {
-     /* width: 100px;  */
-     /* height: 70vw;  */
-  }
-  
-  
+  body {}
+
   .piano {
-    /* width: 600px; */
-    margin: 0 auto;
-    width: 90vh;
+    /* margin: 0 auto; */
+    /* width: 90vh; */
   }
 }
